@@ -71,7 +71,7 @@ def main():
             status_container = st.empty()
             status_container.caption(f"Last updated: {time.strftime('%Y-%m-%d %H:%M:%S')}")
             
-            time.sleep(5)
+            time.sleep(180)
             st.rerun()
         else:
             st.error("No data available")
@@ -80,4 +80,4 @@ def main():
         st.error(f"Error: {e}")
 
 if __name__ == "__main__":
-    main()
+    main() 
