@@ -16,11 +16,8 @@ def get_google_sheet_connection():
         'https://www.googleapis.com/auth/drive.readonly'
     ]
     
-    try:
-        creds = Credentials.from_service_account_file('credentials.json', scopes=scopes)
-    except:
-        creds = Credentials.from_service_account_info(
-            dict(st.secrets["gcp_service_account"]), scopes=scopes)
+    creds = Credentials.from_service_account_info(
+        dict(st.secrets["gcp_service_account"]), scopes=scopes)
     
     return gspread.authorize(creds)
 
